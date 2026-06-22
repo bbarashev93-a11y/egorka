@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Электрик 24/7 — профессиональный выезд и ремонт электрики</title>
+
+<meta name="description" content="Профессиональный электрик 24/7. Ремонт проводки, установка розеток, щитов. Выезд за 30–60 минут. Гарантия до 3 лет.">
+<meta name="robots" content="index, follow">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Inter,sans-serif;
+}
+
+body{
+background:#f5f8ff;
+color:#0f172a;
+overflow-x:hidden;
+}
+
+/* BACKGROUND */
+.bg{
+position:fixed;
+inset:0;
+z-index:-1;
+background:
+radial-gradient(circle at 20% 20%, rgba(37,99,235,0.12), transparent 45%),
+radial-gradient(circle at 80% 30%, rgba(124,58,237,0.10), transparent 45%),
+radial-gradient(circle at 50% 80%, rgba(34,211,238,0.08), transparent 50%);
+}
+
+/* CONTAINER */
+.container{
+width:92%;
+max-width:1200px;
+margin:auto;
+}
+
+/* HEADER */
+header{
+position:sticky;
+top:0;
+z-index:10;
+background:rgba(255,255,255,0.85);
+backdrop-filter:blur(14px);
+border-bottom:1px solid #e5e7eb;
+}
+
+.nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:14px 0;
+}
+
+.logo{
+font-weight:900;
+font-size:18px;
+background:linear-gradient(90deg,#2563eb,#7c3aed,#06b6d4);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+/* BUTTON */
+.btn{
+display:inline-block;
+padding:14px 22px;
+border-radius:14px;
+background:linear-gradient(90deg,#2563eb,#7c3aed,#06b6d4);
+color:#fff;
+text-decoration:none;
+font-weight:600;
+box-shadow:0 12px 30px rgba(37,99,235,0.18);
+transition:.25s;
+}
+
+.btn:hover{
+transform:translateY(-2px);
+}
+
+/* HERO */
+.hero{
+text-align:center;
+padding:120px 20px 80px;
+}
+
+.hero h1{
+font-size:52px;
+font-weight:800;
+letter-spacing:-1px;
+}
+
+.hero p{
+margin-top:12px;
+font-size:18px;
+color:#475569;
+}
+
+.hero-box{
+margin-top:26px;
+display:inline-block;
+padding:18px 22px;
+border-radius:16px;
+background:#fff;
+border:1px solid #e5e7eb;
+box-shadow:0 10px 25px rgba(0,0,0,0.06);
+}
+
+/* SECTION */
+section{
+padding:80px 0;
+}
+
+h2{
+text-align:center;
+font-size:34px;
+margin-bottom:40px;
+}
+
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:22px;
+}
+
+/* CARD */
+.card{
+background:#fff;
+border:1px solid #e5e7eb;
+border-radius:18px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,0.06);
+
+opacity:0;
+transform:translateY(40px);
+transition:all .7s ease;
+}
+
+.card.show{
+opacity:1;
+transform:translateY(0);
+}
+
+.card img{
+width:100%;
+height:200px;
+object-fit:cover;
+filter:saturate(1.1) contrast(1.05);
+}
+
+.card-content{
+padding:16px;
+}
+
+.card h3{
+font-size:18px;
+margin-bottom:6px;
+}
+
+.card p{
+color:#64748b;
+font-size:14px;
+}
+
+.price{
+margin-top:10px;
+display:inline-block;
+padding:6px 10px;
+border-radius:10px;
+background:linear-gradient(90deg,#2563eb,#7c3aed);
+color:#fff;
+font-weight:700;
+font-size:14px;
+}
+
+/* ABOUT */
+.about{
+background:#fff;
+border:1px solid #e5e7eb;
+border-radius:18px;
+padding:30px;
+box-shadow:0 10px 25px rgba(0,0,0,0.06);
+color:#475569;
+line-height:1.6;
+}
+
+/* PROCESS */
+.process{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:16px;
+}
+
+.step{
+background:#fff;
+border:1px solid #e5e7eb;
+border-radius:14px;
+padding:16px;
+text-align:center;
+box-shadow:0 6px 18px rgba(0,0,0,0.04);
+}
+
+/* FAQ */
+.faq{
+background:#fff;
+border:1px solid #e5e7eb;
+border-radius:14px;
+padding:16px;
+margin-bottom:10px;
+color:#475569;
+}
+
+/* CTA */
+.cta{
+margin:60px 20px;
+padding:90px 20px;
+border-radius:26px;
+text-align:center;
+background:linear-gradient(135deg,#2563eb,#7c3aed,#06b6d4);
+color:#fff;
+box-shadow:0 30px 80px rgba(37,99,235,0.25);
+}
+
+/* FLOAT */
+.floating{
+position:fixed;
+bottom:18px;
+right:18px;
+display:flex;
+flex-direction:column;
+gap:12px;
+z-index:999;
+}
+
+.floating a{
+width:56px;
+height:56px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:20px;
+text-decoration:none;
+color:#fff;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+.wa{background:#25D366}
+.tg{background:#229ED9}
+
+/* MOBILE */
+@media(max-width:900px){
+.hero h1{font-size:32px}
+.grid{grid-template-columns:1fr}
+.process{grid-template-columns:1fr}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="bg"></div>
+
+<header>
+<div class="container nav">
+<div class="logo">ELECTRO MASTER PRO</div>
+<a class="btn" href="#contact">Вызвать мастера</a>
+</div>
+</header>
+
+<section class="hero">
+<h1>Профессиональный электрик 24/7</h1>
+<p>Быстрый выезд • Чистая работа • Гарантия до 3 лет</p>
+
+<div class="hero-box">
+⚡ Единый инженерный стандарт сервиса электрики
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<h2>Наши услуги</h2>
+
+<div class="grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1581092334496-3b5b9b9b0c1a?auto=format&fit=crop&w=1200&q=80">
+<div class="card-content">
+<h3>Розетки и выключатели</h3>
+<p>Монтаж и замена электроточек</p>
+<div class="price">от 350 ₽</div>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=80">
+<div class="card-content">
+<h3>Проводка</h3>
+<p>Полная замена электросистем</p>
+<div class="price">от 120 ₽/м</div>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1581090700227-1e8e3c5c1a2d?auto=format&fit=crop&w=1200&q=80">
+<div class="card-content">
+<h3>Электрощиты</h3>
+<p>Сборка и диагностика щитов</p>
+<div class="price">от 2500 ₽</div>
+</div>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<h2>О нас</h2>
+
+<div class="about">
+Мы — команда профессиональных электриков с опытом более 10 лет.
+Работаем по стандартам инженерного сервиса: аккуратно, безопасно и официально.
+
+Каждый объект проходит диагностику, расчёт нагрузки и контроль качества.
+Используем только проверенные материалы и соблюдаем технику безопасности.
+</div>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<h2>Как мы работаем</h2>
+
+<div class="process">
+<div class="step">Заявка</div>
+<div class="step">Диагностика</div>
+<div class="step">Смета</div>
+<div class="step">Выполнение</div>
+</div>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<h2>Частые вопросы</h2>
+
+<div class="faq">Сколько стоит вызов? — от 500 ₽</div>
+<div class="faq">Работаете ночью? — Да, 24/7</div>
+<div class="faq">Есть гарантия? — до 3 лет</div>
+<div class="faq">Как быстро приедете? — 30–60 минут</div>
+
+</div>
+</section>
+
+<section class="cta">
+<h2>Нужен электрик прямо сейчас?</h2>
+<p>Оставьте заявку — мастер свяжется за 10 минут</p>
+<a class="btn" href="#contact" style="background:#fff;color:#2563eb;margin-top:20px;">Оставить заявку</a>
+</section>
+
+<footer style="text-align:center;padding:30px;color:#94a3b8;">
+© 2026 Electro Master Pro
+</footer>
+
+<!-- FLOAT -->
+<div class="floating">
+<a class="wa" href="https://wa.me/79000000000">🟢</a>
+<a class="tg" href="https://t.me/username">✈</a>
+</div>
+
+<script>
+function reveal(){
+const items=document.querySelectorAll('.card,.step,.faq,.about');
+const trigger=window.innerHeight*0.85;
+
+items.forEach(el=>{
+if(el.getBoundingClientRect().top < trigger){
+el.classList.add('show');
+}
+});
+}
+
+window.addEventListener('scroll',reveal);
+window.addEventListener('load',reveal);
+</script>
+
+</body>
+</html>
